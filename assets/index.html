@@ -1,0 +1,45 @@
+<html>
+	<head>
+		<title>Pigreko Mobile App</title>
+		<script type="application/x-javascript" src="js/phonegap-1.4.1.js"></script>
+		<script type="application/x-javascript" src="js/jquery-1.7.1.js"></script>
+		<script type="application/x-javascript" src="js/jquery.json.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+  		<link rel="icon" type="image/png" href="iui/iui-favicon.png">
+  		<link rel="apple-touch-icon" href="iui/iui-logo-touch-icon.png" />
+  		<meta name="apple-mobile-web-app-capable" content="yes" />
+  		<link rel="stylesheet" href="iui/iui.css" type="text/css" />
+  		<link rel="stylesheet" title="Default" href="iui/t/default/default-theme.css"  type="text/css"/>
+  		<link rel="stylesheet" href="css/iui-panel-list.css" type="text/css" />
+  		<script type="application/x-javascript" src="iui/iui.js"></script>
+		<script type="text/javascript">
+			function send(){
+				var a = $(".c").val();
+				var b = $(".o").val();
+				var url ="http://strafalcioni.pigreko.it/send_mob.php?cosa=" + a + "&chi=" + b;
+				$.get(url);
+			}
+		</script>
+	</head>
+	<body>
+		<div class="toolbar">
+        	<h1 id="pageTitle"></h1>
+        	<a id="backButton" class="button" href="#"></a>
+    	</div>
+		 <form title="Gli strafalcioni" selected="true" class="panel">
+        <h2>Gli strafalcioni o dei professori o degli alunni</h2>
+        <fieldset>
+            
+            <div class="row">
+                <label>Cosa?</label>
+                <input type="text" name="cosa" class="c"/>
+            </div>
+			<div class="row">
+                <label>Chi?</label>
+                <input type="text" name="chi" class="o"/>
+            </div>
+			<a class="whiteButton" id ="send" type="submit" href="#" onclick="send()">Invia</a>
+        </fieldset>
+    </form>
+	</body>
+</html
